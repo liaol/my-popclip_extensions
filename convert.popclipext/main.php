@@ -1,7 +1,5 @@
 <?php 
 $text=trim(getenv('POPCLIP_TEXT'));
-$text = '1453882704';
-
 $preg_list = array(
     '/^(\\\u([0-9a-fA-F]{4}))*$/' => '_unicode2utf8',
     '/^\d{10}$/' => '_timestamp2str',
