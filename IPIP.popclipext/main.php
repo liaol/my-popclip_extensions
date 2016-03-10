@@ -10,7 +10,6 @@ $opts = array(
     )
 );
 
-$input = '114.114.114.114';
 $context = stream_context_create($opts);
 $url = $api . $input;
 $data = file_get_contents($url, false, $context);
