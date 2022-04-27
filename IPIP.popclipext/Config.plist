@@ -10,7 +10,7 @@
 			<key>Image File</key>
 			<string>icon.png</string>
 			<key>Script Interpreter</key>
-			<string>/usr/bin/php</string>
+			<string>/usr/local/bin/php</string>
 			<key>Shell Script File</key>
 			<string>main.php</string>
 			<key>Title</key>

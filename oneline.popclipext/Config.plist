@@ -12,17 +12,15 @@
 			<key>Shell Script File</key>
 			<string>main.php</string>
 			<key>Title</key>
-			<string>Unicode2UTF-8</string>
-			<key>Regular Expression</key>
-			<string>^(\\u([0-9a-fA-F]{4}))*$</string>
+            <string>Oneline</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Convert Unicode to UTF-8</string>
+	<string>Convert Multi Lines To One</string>
 	<key>Extension Identifier</key>
-	<string>com.liaol.popclip.extension.unicode2utf-8</string>
+	<string>com.liaol.popclip.extension.oneline</string>
 	<key>Extension Name</key>
-	<string>Unicode2UTF-8</string>
+	<string>Oneline</string>
 	<key>Required Software Version</key>
 	<integer>701</integer>
 </dict>
