@@ -1,10 +1,11 @@
-<?php 
+<?php
 $text=trim(getenv('POPCLIP_TEXT'));
+
 $preg_list = array(
-    '/^(\\\u([0-9a-fA-F]{4}))*$/' => '_unicode2utf8',
     '/^\d{10}$/' => '_timestamp2str',
-   // '/^.*==$/' => '_base64',
+    '/^(\\\u([0-9a-fA-F]{4}))*$/' => '_unicode2utf8',
     '/^.*%[0-9a-z]{2}.*$/' => '_urldecode',
+   // '/^.*==$/' => '_base64',
 );
 
 foreach ($preg_list as $pattern => $function) {
@@ -15,7 +16,7 @@ foreach ($preg_list as $pattern => $function) {
     }
 }
 
-function _unicode2utf8($s) 
+function _unicode2utf8($s)
 {
     return json_decode('"' . $s . '"');
 }
@@ -35,5 +36,3 @@ function _urldecode($s)
 {
     return urldecode($s);
 }
-
-

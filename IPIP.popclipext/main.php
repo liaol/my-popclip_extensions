@@ -2,7 +2,7 @@
 
 $input=trim(getenv('POPCLIP_TEXT'));
 
-$api = 'http://freeapi.ipip.net/';
+$api = 'https://ip.rss.ink/v1/qqwry?ip=';
 $opts = array(
     'http'=>array(
         'method'=>"GET",
@@ -16,13 +16,22 @@ $data = file_get_contents($url, false, $context);
 
 if (!empty($data)) {
     $data = json_decode($data, true);
-    foreach ($data as $k=>$v) {
-        if (empty($v)){
-            unset($data[$k]);
+    if ($data['code'] == 200 && !empty($data['data'])) {
+        $keys = ["country", "province", "city", "county", "area", "isp"];
+        $texts = [];
+        foreach ($keys as $key) {
+            $val = $data['data'][$key];
+            if (!empty($val)) {
+                $texts[] = $val;
+            }
+        }
+        if (!empty($texts)) {
+            echo implode('|', $texts);
+            return;
         }
     }
-    echo implode('|', $data);
-} else {
-    echo 'fail';
 }
+
+
+echo 'fail';
 
